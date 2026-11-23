@@ -65,19 +65,19 @@ The app will be available at `http://localhost:5000`
 
 ## Routes
 
-| Route | Method | Description |
-|-------|--------|-------------|
-| `/` | GET | Home - list all students |
-| `/student/create` | GET/POST | Add new student |
-| `/student/<id>` | GET | View student + enrolled courses |
-| `/student/<id>/update` | GET/POST | Update student + enroll in courses |
-| `/student/<id>/delete` | GET | Delete student |
-| `/courses` | GET | List all courses |
-| `/course/create` | GET/POST | Add new course |
-| `/course/<id>` | GET | View course + enrolled students |
-| `/course/<id>/update` | GET/POST | Update course |
-| `/course/<id>/delete` | GET | Delete course |
-| `/student/<id>/withdraw/<course_id>` | GET | Withdraw student from course |
+| Route                                  | Method   | Description                        |
+| -------------------------------------- | -------- | ---------------------------------- |
+| `/`                                  | GET      | Home - list all students           |
+| `/student/create`                    | GET/POST | Add new student                    |
+| `/student/<id>`                      | GET      | View student + enrolled courses    |
+| `/student/<id>/update`               | GET/POST | Update student + enroll in courses |
+| `/student/<id>/delete`               | GET      | Delete student                     |
+| `/courses`                           | GET      | List all courses                   |
+| `/course/create`                     | GET/POST | Add new course                     |
+| `/course/<id>`                       | GET      | View course + enrolled students    |
+| `/course/<id>/update`                | GET/POST | Update course                      |
+| `/course/<id>/delete`                | GET      | Delete course                      |
+| `/student/<id>/withdraw/<course_id>` | GET      | Withdraw student from course       |
 
 ## Database Models
 
@@ -88,12 +88,14 @@ The app will be available at `http://localhost:5000`
 ## Planned Improvements
 
 ### 🔐 Authentication & Authorization
+
 - [ ] User registration & login (Flask-Login or JWT)
 - [ ] Role-based access (Admin, Student, Instructor)
 - [ ] Protected routes & session management
-- [ ] Password hashing (bcrypt/argon2)
+- [ ] Password hashing (bcrypt)
 
 ### ✅ Validation & Error Handling
+
 - [ ] Server-side validation (WTForms or Marshmallow)
   - Roll number format validation
   - Course code format validation
@@ -104,35 +106,8 @@ The app will be available at `http://localhost:5000`
 - [ ] Flash messages for success/error feedback
 
 ### 🎨 UI/UX Enhancements
+
 - [ ] Responsive design for mobile
 - [ ] Confirmation modals for delete actions
 - [ ] Search & filter on list pages
 - [ ] Pagination for large datasets
-- [ ] Better form layouts with field grouping
-
-### 🛡️ Security
-- [ ] CSRF protection (Flask-WTF)
-- [ ] SQL injection prevention (already using ORM)
-- [ ] XSS prevention (auto-escaping in templates)
-- [ ] Secure headers (Flask-Talisman)
-- [ ] Rate limiting on auth endpoints
-
-### 🏗️ Architecture & Code Quality
-- [ ] Blueprints for modular routing (auth, students, courses)
-- [ ] Application factory pattern
-- [ ] Configuration management (dev/prod/test configs)
-- [ ] Database migrations (Flask-Migrate/Alembic)
-- [ ] Unit & integration tests (pytest)
-- [ ] CI/CD pipeline
-
-### 📊 Additional Features
-- [ ] Student dashboard (view own enrollments)
-- [ ] Course capacity limits & waitlists
-- [ ] Grade management
-- [ ] Export data (CSV/PDF)
-- [ ] Email notifications
-- [ ] Audit logging
-
-## License
-
-MIT
