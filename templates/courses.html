@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Courses</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <h2>Courses List</h2>
+
+    <a href="{{ url_for('home') }}">Go to Students</a>
+
+    {% if courses %}
+    <table id="all-courses" border="1">
+      <thead>
+        <tr>
+          <th>SNo</th>
+          <th>Course Code</th>
+          <th>Course Name</th>
+          <th>Course Description</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for course in courses %}
+        <tr>
+          <td>{{ loop.index }}</td>
+          <td>
+            <a href="{{ url_for('view_course', course_id=course.course_id) }}">{{ course.course_code }}</a>
+          </td>
+          <td>{{ course.course_name }}</td>
+          <td>{{ course.course_description }}</td>
+          <td>
+            <a href="{{ url_for('update_course', course_id=course.course_id) }}">Update</a>
+            &nbsp;
+            <a href="{{ url_for('delete_course', course_id=course.course_id) }}">Delete</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+    <p>No courses found. Add the courses now !</p>
+    {% endif %}
+
+    <a href="{{ url_for('add_course') }}">+ Add Course</a>
+  </body>
+</html>

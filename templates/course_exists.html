@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Course Already Exists</h2>
+    <p>Course with code {{ course_code }} already exists. Please create a different course.</p>
+    <a href="{{ url_for('view_courses') }}">Go to Courses</a>
+</body>
+</html>
